@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Shardul Golwalkar — AI Content Creator</title>
+
+  <meta
+    name="description"
+    content="AI content creator exploring generative visuals, digital characters, storytelling, and creative media."
+  >
+
   <style>
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
       background: #0b0b0f;
       color: #f5f5f5;
       line-height: 1.6;
@@ -24,16 +46,25 @@
       align-items: center;
       padding: 24px 8%;
       border-bottom: 1px solid #24242c;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(11, 11, 15, 0.88);
+      backdrop-filter: blur(14px);
     }
 
     nav h2 {
       letter-spacing: -1px;
+      font-size: 22px;
     }
 
     nav a {
       color: #aaa;
       text-decoration: none;
       margin-left: 24px;
+      transition: 0.3s ease;
     }
 
     nav a:hover {
@@ -41,61 +72,82 @@
     }
 
     .hero {
-      min-height: 80vh;
+      min-height: 88vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 8%;
-      max-width: 1000px;
+      max-width: 1100px;
     }
 
     .tag {
       color: #9b8cff;
       text-transform: uppercase;
       letter-spacing: 3px;
-      font-size: 13px;
+      font-size: 12px;
       margin-bottom: 20px;
+      font-weight: 600;
     }
 
     h1 {
-      font-size: clamp(48px, 9vw, 100px);
-      line-height: 0.95;
-      letter-spacing: -5px;
-      margin-bottom: 28px;
+      font-size: clamp(52px, 9vw, 110px);
+      line-height: 0.94;
+      letter-spacing: -6px;
+      margin-bottom: 30px;
     }
 
     .hero p {
-      max-width: 600px;
+      max-width: 650px;
       font-size: 20px;
       color: #aaa;
     }
 
     section {
-      padding: 90px 8%;
+      padding: 110px 8%;
       border-top: 1px solid #24242c;
     }
 
     .section-title {
-      font-size: 38px;
-      margin-bottom: 30px;
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 45px;
+      letter-spacing: -2px;
     }
 
     .project {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 60px;
       align-items: center;
     }
 
     .project img {
       width: 100%;
-      border-radius: 18px;
+      border-radius: 20px;
       display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .project img:hover {
+      transform: scale(1.02);
+    }
+
+    .project-text h2 {
+      font-size: 48px;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .project-text h3 {
+      font-size: 24px;
+      margin-top: 32px;
+      margin-bottom: 8px;
     }
 
     .project-text p {
       color: #aaa;
       margin-bottom: 20px;
+      font-size: 17px;
+      max-width: 650px;
     }
 
     .pill {
@@ -103,121 +155,565 @@
       padding: 8px 14px;
       border: 1px solid #444;
       border-radius: 30px;
-      margin: 5px;
+      margin: 5px 5px 5px 0;
       color: #bbb;
       font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .pill:hover {
+      border-color: #9b8cff;
+      color: white;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 18px;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 18px;
+      background: #15151b;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .process-card {
+      padding: 30px;
+      border: 1px solid #292932;
+      border-radius: 18px;
+      transition: 0.3s ease;
+    }
+
+    .process-card:hover {
+      border-color: #9b8cff;
+      transform: translateY(-5px);
+    }
+
+    .process-number {
+      color: #9b8cff;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .process-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .process-card p {
+      color: #aaa;
+    }
+
+    .about-text {
+      max-width: 750px;
+      color: #aaa;
+      font-size: 19px;
+      margin-bottom: 22px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #aaa;
+      margin-bottom: 20px;
+      font-size: 18px;
     }
 
     .contact a {
       color: #9b8cff;
-      font-size: 22px;
+      font-size: 24px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .contact a:hover {
+      color: white;
     }
 
     footer {
       padding: 30px 8%;
       color: #666;
       border-top: 1px solid #24242c;
+      text-align: center;
+      font-size: 14px;
     }
 
-    @media (max-width: 700px) {
-      .project {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 800px) {
 
       nav {
-        align-items: flex-start;
+        flex-direction: column;
         gap: 15px;
+        align-items: flex-start;
       }
 
       nav a {
-        margin-left: 10px;
+        margin-left: 0;
+        margin-right: 15px;
       }
+
+      .hero {
+        min-height: 75vh;
+        padding-top: 100px;
+      }
+
+      h1 {
+        letter-spacing: -4px;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: auto;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+  <!-- NAVIGATION -->
+
   <nav>
-    <h2>SG.</h2>
+
+    <h2>SHARDUL.</h2>
+
     <div>
+
       <a href="#work">Work</a>
+      <a href="#process">Process</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+
     </div>
+
   </nav>
 
-  <main>
 
-    <section class="hero">
-      <div class="tag">AI Content · Generative Media · Storytelling</div>
-      <h1>Ideas into<br>visual worlds.</h1>
-      <p>
-        I'm Shardul Golwalkar, an AI content creator exploring
-        generative visuals, digital storytelling, and creative workflows
-        powered by emerging AI tools.
-      </p>
-    </section>
+  <!-- HERO -->
 
-    <section id="work">
-      <h2 class="section-title">Selected Work</h2>
+  <section class="hero">
 
-      <div class="project">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" alt="AI character project">
+    <div class="tag">
+      AI Content · Generative Media · Storytelling
+    </div>
 
-        <div class="project-text">
-          <div class="tag">01 / Character & Visual Identity</div>
-          <h2>IRA</h2>
-          <p>
-            An experimental AI-generated digital character exploring
-            consistent visual identity, image generation, storytelling,
-            and short-form video creation.
-          </p>
+    <h1>
+      Ideas into<br>
+      visual worlds.
+    </h1>
 
-          <span class="pill">AI Image Generation</span>
-          <span class="pill">AI Video</span>
-          <span class="pill">Character Design</span>
-          <span class="pill">Social Content</span>
+    <p>
+
+      I'm Shardul Golwalkar, an AI content creator exploring
+      generative visuals, digital characters, storytelling,
+      and creative workflows powered by emerging AI tools.
+
+    </p>
+
+  </section>
+
+
+  <!-- FEATURED PROJECT -->
+
+  <section id="work">
+
+    <h2 class="section-title">
+      Selected Work
+    </h2>
+
+    <div class="project">
+
+      <img
+        src="assets/images/IRA HERO.png"
+        alt="Ira — AI-generated digital character"
+      >
+
+      <div class="project-text">
+
+        <div class="tag">
+          01 / Character & Visual Identity
         </div>
+
+        <h2>
+          IRA
+        </h2>
+
+        <p>
+
+          Ira is an experimental AI-generated digital character
+          created to explore visual identity, character consistency,
+          fashion, environments, and short-form motion.
+
+        </p>
+
+        <p>
+
+          The project explores how one digital character can be
+          developed across different visual styles while maintaining
+          a recognizable identity.
+
+        </p>
+
+        <span class="pill">
+          AI Image Generation
+        </span>
+
+        <span class="pill">
+          AI Video
+        </span>
+
+        <span class="pill">
+          Character Development
+        </span>
+
+        <span class="pill">
+          Visual Storytelling
+        </span>
+
       </div>
-    </section>
 
-    <section id="about">
-      <h2 class="section-title">About</h2>
-      <p style="max-width: 700px; color: #aaa; font-size: 19px;">
-        I enjoy experimenting with the intersection of creativity,
-        technology, and artificial intelligence. My work focuses on
-        turning ideas into visual content — from AI-generated characters
-        and images to short-form videos and digital storytelling.
-      </p>
+    </div>
 
-      <br>
+  </section>
 
-      <div>
-        <span class="pill">AI Content Creation</span>
-        <span class="pill">Creative Writing</span>
-        <span class="pill">Visual Storytelling</span>
-        <span class="pill">Prompt Design</span>
-        <span class="pill">Content Research</span>
-        <span class="pill">Social Media Content</span>
+
+  <!-- CREATIVE PROCESS -->
+
+  <section id="process">
+
+    <h2 class="section-title">
+      Creative Process
+    </h2>
+
+    <div class="process-grid">
+
+      <div class="process-card">
+
+        <div class="process-number">
+          01 / CONCEPT
+        </div>
+
+        <h3>
+          Character Direction
+        </h3>
+
+        <p>
+
+          Developing the initial character identity, visual
+          personality, aesthetic direction, and creative concept.
+
+        </p>
+
       </div>
-    </section>
 
-    <section id="contact" class="contact">
-      <h2 class="section-title">Let's create something.</h2>
-      <p style="color: #aaa; margin-bottom: 15px;">
-        Open to AI content, creative media, and digital storytelling opportunities.
-      </p>
-      <a href="mailto:shardul3018@gmail.com">
-        shardul3018@gmail.com
-      </a>
-    </section>
 
-  </main>
+      <div class="process-card">
+
+        <div class="process-number">
+          02 / EXPLORATION
+        </div>
+
+        <h3>
+          Visual Development
+        </h3>
+
+        <p>
+
+          Exploring different outfits, environments, lighting
+          conditions, moods, and visual styles.
+
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          03 / CURATION
+        </div>
+
+        <h3>
+          Consistency
+        </h3>
+
+        <p>
+
+          Selecting and refining the strongest outputs to build
+          a cohesive visual identity across multiple images.
+
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          04 / MOTION
+        </div>
+
+        <h3>
+          Bringing Ideas to Life
+        </h3>
+
+        <p>
+
+          Experimenting with AI-generated video to bring the
+          character into motion and explore short-form storytelling.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- IMAGE GALLERY -->
+
+  <section id="gallery">
+
+    <h2 class="section-title">
+      Visual Exploration
+    </h2>
+
+    <div class="gallery">
+
+      <img
+        src="assets/images/IRA-01.png"
+        alt="Ira visual exploration"
+      >
+
+      <img
+        src="assets/images/IRA-02.png"
+        alt="Ira visual exploration"
+      >
+
+      <img
+        src="assets/images/IRA-03.png"
+        alt="Ira visual exploration"
+      >
+
+      <img
+        src="assets/images/IRA-04.png"
+        alt="Ira visual exploration"
+      >
+
+      <img
+        src="assets/images/IRA-05.png"
+        alt="Ira visual exploration"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- VIDEO SECTION -->
+
+  <section id="motion">
+
+    <h2 class="section-title">
+      Motion Studies
+    </h2>
+
+    <p class="about-text">
+
+      Short AI-generated video experiments exploring movement,
+      expression, and character consistency.
+
+    </p>
+
+    <div class="video-grid">
+
+      <video
+        controls
+        loop
+        muted
+        playsinline
+      >
+
+        <source
+          src="assets/videos/IRA-VIDEO-01.mp4"
+          type="video/mp4"
+        >
+
+        Your browser does not support video playback.
+
+      </video>
+
+
+      <video
+        controls
+        loop
+        muted
+        playsinline
+      >
+
+        <source
+          src="assets/videos/IRA-VIDEO-02.mp4"
+          type="video/mp4"
+        >
+
+        Your browser does not support video playback.
+
+      </video>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About
+    </h2>
+
+    <p class="about-text">
+
+      I am an emerging AI content creator interested in the
+      intersection of generative AI, visual storytelling,
+      digital characters, and creative media.
+
+    </p>
+
+    <p class="about-text">
+
+      I enjoy experimenting with AI tools to develop visual
+      concepts, create characters, explore motion, and transform
+      ideas into engaging digital content.
+
+    </p>
+
+    <br>
+
+    <div>
+
+      <span class="pill">
+        AI Content Creation
+      </span>
+
+      <span class="pill">
+        AI Image Generation
+      </span>
+
+      <span class="pill">
+        AI Video Generation
+      </span>
+
+      <span class="pill">
+        Visual Storytelling
+      </span>
+
+      <span class="pill">
+        Prompt Development
+      </span>
+
+      <span class="pill">
+        Content Research
+      </span>
+
+      <span class="pill">
+        Social Media Content
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section
+    id="contact"
+    class="contact"
+  >
+
+    <h2 class="section-title">
+      Let's create something.
+    </h2>
+
+    <p>
+
+      Open to AI content, creative media,
+      and digital storytelling opportunities.
+
+    </p>
+
+    <a
+      href="mailto:shardul3018@gmail.com"
+    >
+
+      shardul3018@gmail.com
+
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
 
   <footer>
-    © 2026 Shardul Golwalkar. Built with curiosity and AI.
+
+    © 2026 Shardul Golwalkar · AI Content & Creative Media
+
   </footer>
 
+
 </body>
+
 </html>
