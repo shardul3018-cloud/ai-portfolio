@@ -118,17 +118,32 @@
       grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center;
+      margin-bottom: 120px;
     }
 
-    .project img {
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project img,
+    .project video {
       width: 100%;
       border-radius: 20px;
       display: block;
+      background: #15151b;
+    }
+
+    .project img {
       transition: transform 0.5s ease;
     }
 
     .project img:hover {
       transform: scale(1.02);
+    }
+
+    .project video {
+      max-height: 700px;
+      object-fit: cover;
     }
 
     .project-text h2 {
@@ -292,6 +307,7 @@
       .project {
         grid-template-columns: 1fr;
         gap: 35px;
+        margin-bottom: 80px;
       }
 
       .gallery {
@@ -362,13 +378,16 @@
   </section>
 
 
-  <!-- FEATURED PROJECT -->
+  <!-- FEATURED PROJECTS -->
 
   <section id="work">
 
     <h2 class="section-title">
       Selected Work
     </h2>
+
+
+    <!-- PROJECT 01: IRA -->
 
     <div class="project">
 
@@ -417,6 +436,79 @@
 
         <span class="pill">
           Visual Storytelling
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROJECT 02: AI FASHION CAMPAIGN -->
+
+    <div class="project">
+
+      <video
+        controls
+        loop
+        muted
+        playsinline
+      >
+
+        <source
+          src="assets/videos/AI-FASHION-CAMPAIGN.mp4"
+          type="video/mp4"
+        >
+
+        Your browser does not support video playback.
+
+      </video>
+
+
+      <div class="project-text">
+
+        <div class="tag">
+          02 / AI Fashion Campaign
+        </div>
+
+        <h2>
+          FASHION<br>
+          CAMPAIGN
+        </h2>
+
+        <p>
+
+          A personal spec advertisement exploring AI-generated
+          fashion visuals, cinematic composition, commercial
+          storytelling, and social-first video editing.
+
+        </p>
+
+        <p>
+
+          Created from concept to final short-form advertisement,
+          combining generative AI visuals with creative direction,
+          pacing, music, editing, and visual storytelling.
+
+        </p>
+
+        <span class="pill">
+          AI Video Generation
+        </span>
+
+        <span class="pill">
+          Creative Direction
+        </span>
+
+        <span class="pill">
+          Video Editing
+        </span>
+
+        <span class="pill">
+          Fashion Visuals
+        </span>
+
+        <span class="pill">
+          Commercial Storytelling
         </span>
 
       </div>
