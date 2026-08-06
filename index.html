@@ -1,241 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shardul Golwalkar — Generative AI Filmmaker</title>
+<title>Shardul Golwalkar | AI Filmmaker</title>
 
-<meta
-  name="description"
-  content="Shardul Golwalkar is a generative AI filmmaker and creative technologist creating cinematic stories, product films, digital characters and commercial visuals."
->
+<meta name="description"
+content="Shardul Golwalkar creates cinematic AI films, commercials and digital worlds.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#080808;
-  --surface:#111;
-  --surface-2:#171717;
-  --text:#f4f1eb;
-  --muted:#8d8d8d;
-  --line:rgba(255,255,255,.12);
-  --accent:#d7ff48;
-  --max:1400px;
-}
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  line-height:1.5;
-  overflow-x:hidden;
+background:#060606;
+color:white;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
 }
 
 a{
-  color:inherit;
-  text-decoration:none;
+text-decoration:none;
+color:inherit;
 }
 
-button{
-  font:inherit;
-}
+:root{
 
-.cursor{
-  position:fixed;
-  width:18px;
-  height:18px;
-  border:1px solid var(--accent);
-  border-radius:50%;
-  pointer-events:none;
-  z-index:9999;
-  transform:translate(-50%,-50%);
-  transition:transform .15s ease,width .2s ease,height .2s ease;
-  mix-blend-mode:difference;
-}
+--accent:#d7ff48;
+--grey:#9a9a9a;
+--line:rgba(255,255,255,.08);
 
-@media(max-width:700px){
-  .cursor{display:none}
 }
-
-/* NAV */
 
 nav{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-  padding:22px 5vw;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:linear-gradient(
-    to bottom,
-    rgba(8,8,8,.95),
-    rgba(8,8,8,.2)
-  );
-  backdrop-filter:blur(12px);
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:24px 6vw;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(15px);
+background:rgba(0,0,0,.45);
+z-index:999;
+
 }
 
 .logo{
-  font-weight:800;
-  letter-spacing:-1px;
-  font-size:20px;
+
+font-size:22px;
+font-weight:900;
+letter-spacing:-1px;
+
 }
 
 .logo span{
-  color:var(--accent);
+
+color:var(--accent);
+
 }
 
 .nav-links{
-  display:flex;
-  gap:28px;
-  color:#aaa;
-  font-size:13px;
-}
 
-.nav-links a{
-  transition:.3s;
+display:flex;
+gap:28px;
+font-size:13px;
+color:#bdbdbd;
+
 }
 
 .nav-links a:hover{
-  color:white;
-}
 
-/* HERO */
+color:white;
+
+}
 
 .hero{
-  min-height:100vh;
-  padding:150px 5vw 70px;
-  max-width:var(--max);
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  position:relative;
+
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:0 6vw;
+position:relative;
+
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:80px;
-  align-items:end;
+.hero::before{
+
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at center,
+rgba(215,255,72,.12),
+transparent 60%);
+
 }
 
-.eyebrow{
-  color:var(--accent);
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-size:11px;
-  font-weight:bold;
-  margin-bottom:25px;
+.hero-content{
+
+max-width:1200px;
+position:relative;
+z-index:2;
+
+}
+
+.hero-tag{
+
+color:var(--accent);
+letter-spacing:3px;
+font-size:11px;
+margin-bottom:30px;
+text-transform:uppercase;
+
 }
 
 .hero h1{
-  font-size:clamp(60px,10vw,160px);
-  line-height:.82;
-  letter-spacing:-9px;
-  max-width:1000px;
+
+font-size:clamp(70px,12vw,170px);
+line-height:.82;
+letter-spacing:-8px;
+margin-bottom:30px;
+
 }
 
 .hero h1 span{
-  color:var(--muted);
+
+color:#5f5f5f;
+
 }
 
 .hero-description{
-  color:#aaa;
-  max-width:420px;
-  font-size:17px;
-  line-height:1.7;
+
+max-width:640px;
+font-size:20px;
+line-height:1.8;
+color:#b0b0b0;
+margin-bottom:45px;
+
 }
 
-.hero-actions{
-  display:flex;
-  gap:12px;
-  margin-top:32px;
-  flex-wrap:wrap;
+.hero-buttons{
+
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+
 }
 
 .btn{
-  padding:14px 22px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  font-size:13px;
-  transition:.3s;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
+
+padding:16px 28px;
+border-radius:999px;
+border:1px solid var(--line);
+transition:.35s;
+font-size:14px;
+
 }
 
 .btn:hover{
-  transform:translateY(-3px);
-  border-color:white;
+
+transform:translateY(-4px);
+
 }
 
-.btn-primary{
-  background:var(--accent);
-  color:#080808;
-  border-color:var(--accent);
-  font-weight:bold;
+.primary{
+
+background:var(--accent);
+color:black;
+font-weight:700;
+border:none;
+
 }
 
-.scroll-note{
-  position:absolute;
-  bottom:35px;
-  left:5vw;
-  color:#666;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
+.scroll{
 
-/* SECTION */
+position:absolute;
+bottom:35px;
+left:6vw;
+font-size:11px;
+letter-spacing:3px;
+color:#666;
+
+}
 
 section{
-  max-width:var(--max);
-  margin:auto;
-  padding:130px 5vw;
-  border-top:1px solid var(--line);
+
+padding:120px 6vw;
+
 }
 
 .section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:30px;
-  margin-bottom:55px;
-}
 
-.section-label{
-  color:var(--accent);
-  font-size:11px;
-  letter-spacing:3px;
-  text-transform:uppercase;
+display:flex;
+justify-content:space-between;
+align-items:end;
+margin-bottom:60px;
+gap:50px;
+
 }
 
 .section-title{
-  font-size:clamp(42px,6vw,85px);
-  letter-spacing:-5px;
-  line-height:.9;
+
+font-size:clamp(45px,7vw,90px);
+line-height:.9;
+letter-spacing:-4px;
+
 }
 
-.section-intro{
-  max-width:400px;
-  color:#888;
-  font-size:15px;
+.section-small{
+
+font-size:11px;
+color:var(--accent);
+letter-spacing:3px;
+margin-bottom:12px;
+text-transform:uppercase;
+
 }
 
+.section-text{
+
+max-width:430px;
+color:#888;
+line-height:1.8;
+
+}
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:72px;
+letter-spacing:-3px;
+
+}
+
+.section-head{
+
+display:block;
+
+}
+
+.section-text{
+
+margin-top:20px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+SHARDUL<span>.</span>
+</div>
+
+<div class="nav-links">
+
+<a href="#featured">Film</a>
+
+<a href="#work">Work</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="hero-tag">
+
+FEATURED AI SHORT FILM • 2026
+
+</div>
+
+<h1>
+
+THE LOST<br>
+
+<span>SIGNAL.</span>
+
+</h1>
+
+<p class="hero-description">
+
+An AI-generated cinematic short film inspired by A24 storytelling.
+Built from screenplay, AI visuals, motion, sound design and editing.
+
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn primary" href="#featured">
+
+Watch Film
+
+</a>
+
+<a class="btn" href="#work">
+
+View Projects
+
+</a>
+
+</div>
+
+</div>
+
+<div class="scroll">
+
+SCROLL ↓
+
+</div>
+
+</header>
+
+<!-- FEATURED FILM -->
 /* FEATURED FILM */
 
 .featured{
@@ -794,574 +901,683 @@ footer{
 
 <!-- FEATURED FILM -->
 
-<section id="featured" class="featured reveal">
+<!-- FEATURED FILM -->
 
-  <div class="section-head">
-    <div>
-      <div class="section-label">01 / Featured Film</div>
-      <h2 class="section-title">The work<br>that stays.</h2>
-    </div>
+<section id="featured">
 
-    <p class="section-intro">
-      A cinematic AI-generated product story about memory, craftsmanship and the objects that quietly live alongside us.
-    </p>
-  </div>
+<div class="section-head">
 
-  <div class="film-card">
+<div>
 
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      controls
-    >
-      <source
-        src="assets/videos/THE-CHAIR-THAT-REMEMBERED.mp4"
-        type="video/mp4"
-      >
-    </video>
+<div class="section-small">
+01 • FEATURE FILM
+</div>
 
-    <div class="film-gradient"></div>
+<h2 class="section-title">
 
-    <div class="film-content">
+A story<br>
+worth watching.
 
-      <div class="eyebrow">
-        AI Product Storytelling · 2026
-      </div>
+</h2>
 
-      <h2 class="film-title">
-        THE CHAIR<br>
-        THAT REMEMBERED
-      </h2>
+</div>
 
-      <p class="film-subtitle">
-        An armchair moves through generations of a family while everything around it changes. The chair remains.
-      </p>
+<p class="section-text">
 
-      <div class="film-actions">
+A cinematic AI short film exploring loneliness, memory,
+radio transmissions and hope.
+Every frame was created through a complete AI filmmaking pipeline.
 
-        <a
-          class="btn btn-primary"
-          href="assets/videos/THE-CHAIR-THAT-REMEMBERED.mp4"
-          target="_blank"
-        >
-          ▶ Watch the film
-        </a>
+</p>
 
-        <button
-          class="btn"
-          onclick="openModal()"
-        >
-          View case study
-        </button>
+</div>
 
-      </div>
+<div class="film-card">
 
-    </div>
+<video
+autoplay
+muted
+loop
+playsinline
+controls>
 
-  </div>
+<source
+src="assets/videos/THE-LOST-SIGNAL.mp4"
+type="video/mp4">
+
+</video>
+
+<div class="film-overlay">
+
+<div class="film-info">
+
+<div class="film-tag">
+
+FEATURED PROJECT
+
+</div>
+
+<h2>
+
+THE LOST<br>
+SIGNAL
+
+</h2>
+
+<p>
+
+A cinematic AI short inspired by the visual language
+of modern independent cinema.
+
+</p>
+
+<div class="film-buttons">
+
+<a
+class="btn primary"
+href="assets/videos/THE-LOST-SIGNAL.mp4"
+target="_blank">
+
+▶ Watch Film
+
+</a>
+
+<button
+class="btn"
+onclick="openModal()">
+
+Behind the Scenes
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
+
+<style>
+
+.film-card{
+
+position:relative;
+border-radius:28px;
+overflow:hidden;
+background:#111;
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.film-card video{
+
+width:100%;
+display:block;
+min-height:700px;
+object-fit:cover;
+
+}
+
+.film-overlay{
+
+position:absolute;
+inset:0;
+display:flex;
+align-items:flex-end;
+
+background:
+
+linear-gradient(
+to top,
+rgba(0,0,0,.92),
+rgba(0,0,0,.08)
+);
+
+}
+
+.film-info{
+
+padding:50px;
+max-width:760px;
+
+}
+
+.film-tag{
+
+color:#d7ff48;
+font-size:12px;
+letter-spacing:3px;
+margin-bottom:18px;
+
+}
+
+.film-info h2{
+
+font-size:clamp(50px,8vw,110px);
+line-height:.85;
+letter-spacing:-5px;
+margin-bottom:20px;
+
+}
+
+.film-info p{
+
+color:#bdbdbd;
+font-size:18px;
+line-height:1.8;
+max-width:600px;
+
+}
+
+.film-buttons{
+
+display:flex;
+gap:15px;
+margin-top:35px;
+flex-wrap:wrap;
+
+}
+
+@media(max-width:900px){
+
+.film-card video{
+
+min-height:500px;
+
+}
+
+.film-info{
+
+padding:25px;
+
+}
+
+.film-info h2{
+
+letter-spacing:-2px;
+
+}
+
+}
+
+</style>
 
 <!-- OTHER WORK -->
 
-<section id="work" class="reveal">
+<!-- OTHER WORK -->
 
-  <div class="section-head">
-    <div>
-      <div class="section-label">02 / Selected Work</div>
-      <h2 class="section-title">Other<br>worlds.</h2>
-    </div>
+<section id="work">
 
-    <p class="section-intro">
-      Experiments in digital characters, fashion, visual identity, motion and commercial storytelling.
-    </p>
-  </div>
+<div class="section-head">
 
-  <div class="project-grid">
+<div>
 
-    <article class="project-card">
+<div class="section-small">
+02 • SELECTED PROJECTS
+</div>
 
-      <img
-        src="assets/images/IRA HERO.png"
-        alt="Ira AI digital character"
-      >
+<h2 class="section-title">
 
-      <div class="project-overlay">
+More than<br>
+one story.
 
-        <div class="project-number">
-          02 / CHARACTER & VISUAL IDENTITY
-        </div>
+</h2>
 
-        <div class="project-info">
+</div>
 
-          <h3>IRA</h3>
+<p class="section-text">
 
-          <p>
-            An experimental AI-generated digital character exploring identity, consistency, fashion, environments and motion.
-          </p>
+Every project explores a different genre, visual language and creative challenge—
+from cinematic shorts to commercial advertising.
 
-        </div>
+</p>
 
-      </div>
+</div>
 
-    </article>
+<div class="projects-grid">
 
-    <article class="project-card">
+<!-- PROJECT 1 -->
 
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-      >
-        <source
-          src="assets/videos/AI-FASHION-CAMPAIGN.mp4"
-          type="video/mp4"
-        >
-      </video>
+<div class="project">
 
-      <div class="project-overlay">
+<img
+src="assets/images/IRA HERO.png"
+alt="IRA">
 
-        <div class="project-number">
-          03 / COMMERCIAL VISUALS
-        </div>
+<div class="project-content">
 
-        <div class="project-info">
+<span class="project-category">
 
-          <h3>FASHION<br>CAMPAIGN</h3>
+DIGITAL HUMAN
 
-          <p>
-            A personal spec advertisement built around AI-generated fashion visuals, cinematic direction and short-form commercial editing.
-          </p>
+</span>
 
-        </div>
+<h3>
 
-      </div>
+IRA
 
-    </article>
+</h3>
 
-  </div>
+<p>
+
+An AI-generated digital character exploring identity,
+fashion, consistency and storytelling across multiple worlds.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- PROJECT 2 -->
+
+<div class="project">
+
+<video
+autoplay
+muted
+loop
+playsinline>
+
+<source
+src="assets/videos/AI-FASHION-CAMPAIGN.mp4"
+type="video/mp4">
+
+</video>
+
+<div class="project-content">
+
+<span class="project-category">
+
+COMMERCIAL
+
+</span>
+
+<h3>
+
+AI Fashion<br>
+Campaign
+
+</h3>
+
+<p>
+
+Spec advertisement combining cinematic framing,
+AI generation and luxury fashion direction.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- PROJECT 3 -->
+
+<div class="project">
+
+<div class="coming-soon">
+
+COMING SOON
+
+</div>
+
+<div class="project-content">
+
+<span class="project-category">
+
+NEXT PROJECT
+
+</span>
+
+<h3>
+
+Your Next<br>
+Film
+
+</h3>
+
+<p>
+
+Reserve this space for your next cinematic project.
+Replace it whenever a new film drops.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
+
+<style>
+
+.projects-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+
+}
+
+.project{
+
+background:#111;
+border:1px solid rgba(255,255,255,.08);
+border-radius:22px;
+overflow:hidden;
+transition:.35s;
+position:relative;
+
+}
+
+.project:hover{
+
+transform:translateY(-10px);
+
+}
+
+.project img,
+.project video{
+
+width:100%;
+height:360px;
+object-fit:cover;
+display:block;
+
+}
+
+.project-content{
+
+padding:28px;
+
+}
+
+.project-category{
+
+font-size:11px;
+letter-spacing:3px;
+color:#d7ff48;
+display:block;
+margin-bottom:16px;
+
+}
+
+.project h3{
+
+font-size:42px;
+line-height:.9;
+letter-spacing:-2px;
+margin-bottom:16px;
+
+}
+
+.project p{
+
+color:#9b9b9b;
+line-height:1.8;
+font-size:15px;
+
+}
+
+.coming-soon{
+
+height:360px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:34px;
+font-weight:800;
+letter-spacing:4px;
+background:
+
+linear-gradient(
+135deg,
+#111,
+#1b1b1b
+);
+
+color:#555;
+
+}
+
+@media(max-width:1000px){
+
+.projects-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
 
 <!-- PROCESS -->
 
-<section id="process" class="reveal">
+<!-- PROCESS -->
 
-  <div class="section-head">
+<section id="process">
 
-    <div>
-      <div class="section-label">03 / How I work</div>
-      <h2 class="section-title">From idea<br>to image.</h2>
-    </div>
+<div class="section-head">
 
-    <p class="section-intro">
-      I treat generative AI as part of a creative production process — not as a button that replaces direction.
-    </p>
+<div>
 
-  </div>
+<div class="section-small">
+03 • PROCESS
+</div>
 
-  <div class="process-grid">
+<h2 class="section-title">
 
-    <div class="process-card">
-      <div class="process-number">01 / DIRECTION</div>
-      <h3>Find the idea.</h3>
-      <p>Story, audience, mood, visual direction and the reason the piece should exist.</p>
-    </div>
+Every frame<br>
+has intent.
 
-    <div class="process-card">
-      <div class="process-number">02 / VISUAL WORLD</div>
-      <h3>Build the world.</h3>
-      <p>References, prompts, products, characters, environments and visual systems.</p>
-    </div>
+</h2>
 
-    <div class="process-card">
-      <div class="process-number">03 / CONSISTENCY</div>
-      <h3>Refine the details.</h3>
-      <p>Curating and iterating until the visual identity, product and story hold together.</p>
-    </div>
+</div>
 
-    <div class="process-card">
-      <div class="process-number">04 / DELIVERY</div>
-      <h3>Make it move.</h3>
-      <p>Motion, voice, sound, pacing and editing turn the generated material into finished content.</p>
-    </div>
+<p class="section-text">
 
-  </div>
+From screenplay to final sound mix, every project follows a cinematic production pipeline rather than random AI generation.
 
-</section>
+</p>
 
-<!-- INTERACTIVE WORKFLOW -->
+</div>
 
-<section class="reveal">
+<div class="process-grid">
 
-  <div class="section-label">04 / Interactive Workflow</div>
+<div class="process-card">
+<h3>01</h3>
+<h4>Concept</h4>
+<p>Story, emotion, screenplay and visual direction.</p>
+</div>
 
-  <h2 class="section-title">
-    How a project<br>
-    comes alive.
-  </h2>
+<div class="process-card">
+<h3>02</h3>
+<h4>Generation</h4>
+<p>Create consistent AI images and environments.</p>
+</div>
 
-  <div class="workflow">
+<div class="process-card">
+<h3>03</h3>
+<h4>Animation</h4>
+<p>Bring still frames to life using AI motion tools.</p>
+</div>
 
-    <div
-      class="workflow-step active"
-      data-description="Developing the idea, story, visual direction, mood and intended audience."
-    >
-      <strong>01</strong>
-      <h3>CONCEPT</h3>
-    </div>
+<div class="process-card">
+<h3>04</h3>
+<h4>Post Production</h4>
+<p>Edit, sound design, voice and cinematic pacing.</p>
+</div>
 
-    <div
-      class="workflow-step"
-      data-description="Building references, prompts, compositions, characters, products and environments."
-    >
-      <strong>02</strong>
-      <h3>VISUALS</h3>
-    </div>
-
-    <div
-      class="workflow-step"
-      data-description="Generating and refining AI images while maintaining visual and product consistency."
-    >
-      <strong>03</strong>
-      <h3>GENERATE</h3>
-    </div>
-
-    <div
-      class="workflow-step"
-      data-description="Transforming still visuals into movement through image-to-video generation and scene direction."
-    >
-      <strong>04</strong>
-      <h3>MOTION</h3>
-    </div>
-
-    <div
-      class="workflow-step"
-      data-description="Adding voiceover, music, sound effects, pacing and editorial structure."
-    >
-      <strong>05</strong>
-      <h3>AUDIO</h3>
-    </div>
-
-    <div
-      class="workflow-step"
-      data-description="Polishing the final piece into a clear, cinematic and commercially usable film."
-    >
-      <strong>06</strong>
-      <h3>FINAL FILM</h3>
-    </div>
-
-  </div>
-
-  <div
-    class="workflow-description"
-    id="workflowDescription"
-  >
-    Developing the idea, story, visual direction, mood and intended audience.
-  </div>
+</div>
 
 </section>
 
-<!-- VISUAL EXPLORATION -->
+<style>
 
-<section class="reveal">
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
 
-  <div class="section-label">05 / Visual Exploration</div>
+.process-card{
+padding:35px;
+border:1px solid rgba(255,255,255,.08);
+background:#111;
+border-radius:20px;
+}
 
-  <h2 class="section-title">
-    One character.<br>
-    Many worlds.
-  </h2>
+.process-card h3{
+font-size:42px;
+color:#d7ff48;
+margin-bottom:20px;
+}
 
-  <div class="gallery">
+.process-card h4{
+font-size:22px;
+margin-bottom:15px;
+}
 
-    <img src="assets/images/IRA-01.png" alt="Ira visual exploration">
-    <img src="assets/images/IRA-02.png" alt="Ira visual exploration">
-    <img src="assets/images/IRA-03.png" alt="Ira visual exploration">
-    <img src="assets/images/IRA-04.png" alt="Ira visual exploration">
-    <img src="assets/images/IRA-05.png" alt="Ira visual exploration">
+.process-card p{
+color:#9c9c9c;
+line-height:1.7;
+}
 
-  </div>
+@media(max-width:900px){
+.process-grid{
+grid-template-columns:1fr;
+}
+}
 
-</section>
-
-<!-- MOTION -->
-
-<section class="reveal">
-
-  <div class="section-head">
-
-    <div>
-      <div class="section-label">06 / Motion Studies</div>
-      <h2 class="section-title">Still images<br>that move.</h2>
-    </div>
-
-    <p class="section-intro">
-      Short experiments exploring movement, expression and character consistency.
-    </p>
-
-  </div>
-
-  <div class="project-grid">
-
-    <div class="project-card">
-      <video autoplay muted loop playsinline controls>
-        <source
-          src="assets/videos/IRA-VIDEO-01.mp4"
-          type="video/mp4"
-        >
-      </video>
-    </div>
-
-    <div class="project-card">
-      <video autoplay muted loop playsinline controls>
-        <source
-          src="assets/videos/IRA-VIDEO-02.mp4"
-          type="video/mp4"
-        >
-      </video>
-    </div>
-
-  </div>
-
-</section>
+</style>
 
 <!-- ABOUT -->
 
-<section id="about" class="reveal">
+<section id="about">
 
-  <div class="about-layout">
+<div class="section-head">
 
-    <div>
+<div>
 
-      <div class="section-label">07 / About</div>
+<div class="section-small">
+04 • ABOUT
+</div>
 
-      <p class="about-copy">
-        I make visual stories with emerging tools.
-        <span>
-          My work sits between generative AI, filmmaking, product storytelling, digital characters and creative technology.
-        </span>
-      </p>
+<h2 class="section-title">
 
-    </div>
+Creating<br>
+cinematic AI.
 
-    <div class="skills">
+</h2>
 
-      <div class="skill">AI Video Creation</div>
-      <div class="skill">AI Image Generation</div>
-      <div class="skill">Product Advertising</div>
-      <div class="skill">Visual Storytelling</div>
-      <div class="skill">Prompt Development</div>
-      <div class="skill">Creative Direction</div>
-      <div class="skill">Video Editing</div>
-      <div class="skill">Voiceover & Audio</div>
-      <div class="skill">Character Development</div>
-      <div class="skill">Commercial Content</div>
+</div>
 
-    </div>
+<p class="section-text">
 
-  </div>
+I'm Shardul Golwalkar, an AI Filmmaker exploring the intersection of storytelling, cinema and generative technology.
+
+My focus is creating films that feel directed—not generated.
+
+</p>
+
+</div>
 
 </section>
 
 <!-- CONTACT -->
 
-<section id="contact" class="contact reveal">
+<section id="contact">
 
-  <div class="section-label">08 / Contact</div>
+<div style="text-align:center">
 
-  <h2 class="section-title">
-    Have an idea<br>
-    worth making?
-  </h2>
+<div class="section-small">
+LET'S CREATE
+</div>
 
-  <p>
-    Open to AI video, creative technology, product storytelling and generative media opportunities.
-  </p>
+<h2 class="section-title">
 
-  <a
-    class="email"
-    href="mailto:shardul3018@gmail.com"
-  >
-    shardul3018@gmail.com
-  </a>
+Ready to build<br>
+something unforgettable?
 
-</section>
+</h2>
 
-<footer>
+<br>
 
-  <span>
-    © 2026 Shardul Golwalkar
-  </span>
+<a class="btn primary"
+href="mailto:shardul3018@gmail.com">
 
-  <span>
-    Generative AI Filmmaker · Creative Technologist
-  </span>
+shardul3018@gmail.com
 
-</footer>
-
-<!-- CASE STUDY MODAL -->
-
-<div
-  class="modal"
-  id="chairModal"
->
-
-  <div class="modal-inner">
-
-    <div
-      class="close"
-      onclick="closeModal()"
-    >
-      ×
-    </div>
-
-    <div class="eyebrow">
-      CASE STUDY / AI PRODUCT STORYTELLING
-    </div>
-
-    <h2>
-      THE CHAIR<br>
-      THAT REMEMBERED
-    </h2>
-
-    <p>
-      A complete AI-generated product storytelling film created from concept to final edit.
-    </p>
-
-    <p>
-      The creative challenge was to keep the chair visually consistent while people, clothing, environments and generations changed around it.
-    </p>
-
-    <p>
-      The project combined creative direction, AI image generation, image-to-video animation, scene continuity, voiceover, sound and final editing.
-    </p>
-
-    <div class="modal-workflow">
-
-      <div>
-        <strong>01</strong>
-        <h3>STORY</h3>
-      </div>
-
-      <div>
-        <strong>02</strong>
-        <h3>VISUALS</h3>
-      </div>
-
-      <div>
-        <strong>03</strong>
-        <h3>MOTION</h3>
-      </div>
-
-      <div>
-        <strong>04</strong>
-        <h3>AUDIO</h3>
-      </div>
-
-    </div>
-
-    <video controls playsinline>
-      <source
-        src="assets/videos/THE-CHAIR-THAT-REMEMBERED.mp4"
-        type="video/mp4"
-      >
-    </video>
-
-  </div>
+</a>
 
 </div>
 
-<script>
+</section>
 
-/* CURSOR */
+<footer style="padding:60px 6vw;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;color:#666;flex-wrap:wrap;gap:15px;">
 
-const cursor = document.querySelector(".cursor");
+<div>
 
-document.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
+© 2026 Shardul Golwalkar
 
-/* SCROLL REVEAL */
+</div>
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  {threshold:.12}
-);
+<div>
 
-document
-  .querySelectorAll(".reveal")
-  .forEach(el => observer.observe(el));
+AI Filmmaker • Creative Technologist
 
-/* WORKFLOW */
+</div>
 
-const steps = document.querySelectorAll(".workflow-step");
-const description = document.getElementById("workflowDescription");
+</footer>
 
-steps.forEach(step => {
+<!-- CASE STUDY -->
 
-  step.addEventListener("click", () => {
+<div class="modal" id="chairModal">
 
-    steps.forEach(item =>
-      item.classList.remove("active")
-    );
+<div class="modal-inner">
 
-    step.classList.add("active");
+<div class="close" onclick="closeModal()">
+×
+</div>
 
-    description.textContent =
-      step.dataset.description;
+<div class="section-small">
+FEATURED FILM
+</div>
 
-  });
+<h2 class="section-title">
 
-});
+THE LOST<br>
+SIGNAL
 
-/* MODAL */
+</h2>
 
-function openModal(){
-  document
-    .getElementById("chairModal")
-    .classList.add("open");
+<p style="color:#999;line-height:1.8;max-width:700px">
 
-  document.body.style.overflow = "hidden";
-}
+A cinematic AI short film inspired by independent cinema.
 
-function closeModal(){
-  document
-    .getElementById("chairModal")
-    .classList.remove("open");
+Built using screenplay development, AI image generation,
+AI video animation, editing, sound design and colour grading.
 
-  document.body.style.overflow = "";
-}
+The project demonstrates a complete end-to-end AI filmmaking workflow.
 
-document
-  .getElementById("chairModal")
-  .addEventListener("click", e => {
+</p>
 
-    if(e.target.id === "chairModal"){
-      closeModal();
-    }
+<br>
 
-  });
+<video controls playsinline style="width:100%;border-radius:20px;">
 
-document.addEventListener("keydown", e => {
+<source
+src="assets/videos/THE-LOST-SIGNAL.mp4"
+type="video/mp4">
 
-  if(e.key === "Escape"){
-    closeModal();
-  }
+</video>
 
-});
+</div>
 
-</script>
-
-</body>
-</html>
+</div>
